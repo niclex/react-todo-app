@@ -2,6 +2,7 @@
   "name": "react-todo-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://snovruslan.github.io/react-todo-app",
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
