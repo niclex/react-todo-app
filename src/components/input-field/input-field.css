@@ -1,0 +1,22 @@
+.input-wrapper {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.input-wrapper input {
+    width: 300px;
+    padding: 8px 12px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 0 4px #666;
+    transition: .6s box-shadow;
+}
+
+.input-wrapper input:focus {
+    outline-color: var(--green);
+}
+
+.input-wrapper small {
+    color: gray;
+    cursor: default;
+}
