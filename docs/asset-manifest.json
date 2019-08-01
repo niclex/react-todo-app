@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "static/css/main.7aebbb44.chunk.css",
+    "main.js": "static/js/main.55b94792.chunk.js",
+    "main.js.map": "static/js/main.55b94792.chunk.js.map",
+    "runtime~main.js": "static/js/runtime~main.a3a648b2.js",
+    "runtime~main.js.map": "static/js/runtime~main.a3a648b2.js.map",
+    "static/js/2.62d843bb.chunk.js": "static/js/2.62d843bb.chunk.js",
+    "static/js/2.62d843bb.chunk.js.map": "static/js/2.62d843bb.chunk.js.map",
+    "index.html": "index.html",
+    "precache-manifest.45dcfa0d2d4854bb7622d56542016344.js": "precache-manifest.45dcfa0d2d4854bb7622d56542016344.js",
+    "service-worker.js": "service-worker.js",
+    "static/css/main.7aebbb44.chunk.css.map": "static/css/main.7aebbb44.chunk.css.map",
+    "static/media/sad_dog.png": "static/media/sad_dog.54335fd0.png"
+  }
+}
