@@ -1,0 +1,18 @@
+footer {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+footer > small > span {
+    color: var(--red);
+}
+
+footer > small > a {
+    text-decoration: none;
+    color: rgb(13, 83, 189);
+}
+
+footer > small > a:hover {
+    text-decoration: underline;
+}
