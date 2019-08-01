@@ -1,0 +1,15 @@
+.no-task-block {
+    text-align: center;
+}
+
+.no-task-block img {
+    user-select: none;
+    height: 30vmin;
+    margin-block-start: 20px;
+}
+
+.no-task-block div {
+    font-weight: 100;
+    font-size: 3.5vmin;
+    letter-spacing: 1px;
+}
