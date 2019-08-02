@@ -16,7 +16,7 @@ const App = () => {
      */
     useEffect(() => {
         if (localStorage.getItem('-app-tasks')) {
-            const tasksFromStorage = localStorage.getItem('-app-tasks').split(',');
+            const tasksFromStorage = JSON.parse(localStorage.getItem('-app-tasks'));
             setTasks(tasksFromStorage);
         }
     }, []);
@@ -32,7 +32,7 @@ const App = () => {
         if (e.key === 'Enter') {
             // checking if the same task already added.
             const hasSameTask = tasks.some(item => {
-                return item.toLowerCase() === e.target.value.trim().toLowerCase();
+                return item.text.toLowerCase() === e.target.value.trim().toLowerCase();
             });
 
             if (hasSameTask) {
@@ -46,9 +46,15 @@ const App = () => {
                 e.target.style.outlineColor = 'var(--red)';
             }
             else if (e.target.value.trim()) {
-                const newTasks = [...tasks, e.target.value.trim()];
+                const newTasks = [
+                    ...tasks,
+                    {
+                        text: e.target.value.trim(),
+                        isDone: 'no'
+                    }
+                ];
                 setTasks(newTasks);
-                localStorage.setItem('-app-tasks', newTasks);
+                localStorage.setItem('-app-tasks', JSON.stringify(newTasks));
 
                 e.target.style.outlineColor = 'var(--green)';
                 e.target.value = '';
@@ -62,11 +68,11 @@ const App = () => {
      */
     const deleteUserTask = e => {
         const filtered = tasks.filter(item => {
-            return item !== e.target.parentNode.firstChild.textContent;
+            return item.text !== e.target.parentNode.firstChild.textContent;
         });
 
         setTasks(filtered);
-        localStorage.setItem('-app-tasks', filtered);
+        localStorage.setItem('-app-tasks', JSON.stringify(filtered));
     };
 
     /**
@@ -88,17 +94,41 @@ const App = () => {
                 taskBlock.contentEditable = false;
                 taskBlock.title = "Double click to mark as done";
 
-                tasks.map((item, idx) => {
-                    if (item === previousBlockValue) {
-                        tasks[idx] = e.target.textContent.trim();
+                tasks.map(item => {
+                    if (item.text === previousBlockValue) {
+                        item.text = e.target.textContent.trim();
                     }
                     return true;
                 });
 
                 setTasks(tasks);
-                localStorage.setItem('-app-tasks', tasks);
+                localStorage.setItem('-app-tasks', JSON.stringify(tasks));
             }
         });
+    };
+
+    /**
+     * Marking user task as done or not.
+     * If it's done, it will be styled with text-decoration: line-through
+     * and else the text-decoration will be set to none.
+     * And then renewing state and pushing in localStorage new state
+     */
+    const markAsDone = e => {
+        tasks.map(item => {
+            if (item.text === e.target.textContent) {
+                if (item.isDone === 'yes') {
+                    item.isDone = 'no';
+                    e.target.style.textDecoration = 'none';
+                } else {
+                    item.isDone = 'yes';
+                    e.target.style.textDecoration = 'line-through';
+                }
+            }
+            return true;
+        });
+
+        setTasks(tasks);
+        localStorage.setItem('-app-tasks', JSON.stringify(tasks));
     };
 
     return (
@@ -117,6 +147,7 @@ const App = () => {
                     list={tasks}
                     removeTask={deleteUserTask}
                     editTask={editUserTask}
+                    markAsDone={markAsDone}
                 />
             </div>
 
