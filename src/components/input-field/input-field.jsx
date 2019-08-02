@@ -5,9 +5,14 @@ import './input-field.css';
 const InputField = ({ submitTask }) => {
     return (
         <div className="input-wrapper">
-            <input onKeyDown={submitTask} />
+            <input
+                onKeyDown={submitTask}
+                id="task-input"
+            />
             <br />
-            <small>Click Enter to submit a task.</small>
+            <label htmlFor="task-input">
+                <small>Click Enter to submit a task.</small>
+            </label>
         </div>
     );
 };
