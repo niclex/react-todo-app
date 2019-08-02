@@ -4,16 +4,17 @@ import Task from './task/task';
 import NoTaskBlock from './no-task/no-task-block';
 
 
-const TaskList = ({ list, removeTask, editTask }) => {
+const TaskList = ({ list, removeTask, editTask, markAsDone }) => {
     return (
         <ul className="task-list">
             {
-                list.map((text, idx) => (
+                list.map((task, idx) => (
                     <Task
                         key={idx}
-                        text={text}
+                        task={task}
                         removeTask={removeTask}
                         editTask={editTask}
+                        markAsDone={markAsDone}
                     />
                 ))
             }
