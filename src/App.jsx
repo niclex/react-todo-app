@@ -141,7 +141,7 @@ const App = () => {
                 >TODO</a>
             </header>
 
-            <div className="wrapper">
+            <main>
                 <InputField submitTask={submitUserTask} />
                 <TaskList
                     list={tasks}
@@ -149,7 +149,7 @@ const App = () => {
                     editTask={editUserTask}
                     markAsDone={markAsDone}
                 />
-            </div>
+            </main>
 
             <footer>
                 <MadeWithLove githubProfile={githubLink} />
