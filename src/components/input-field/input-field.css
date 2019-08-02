@@ -17,6 +17,13 @@
 }
 
 .input-wrapper small {
-    color: gray;
+    color: var(--text);
     cursor: default;
+}
+
+
+@media (max-width: 640px) {
+    .input-wrapper input {
+        width: 80vw;
+    }
 }

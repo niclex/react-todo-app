@@ -13,3 +13,15 @@
     font-size: 3.5vmin;
     letter-spacing: 1px;
 }
+
+
+@media (max-width: 640px) {
+    .no-task-block img {
+        height: 10em;
+        margin-block-start: 0;
+    }
+
+    .no-task-block div {
+        font-size: 5vmin
+    }
+}
