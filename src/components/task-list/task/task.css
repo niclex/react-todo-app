@@ -4,6 +4,14 @@
     justify-content: space-between;
     word-break: break-word;
     margin: 10px 0;
+    opacity: 0;
+    animation: appear-item .6s linear forwards;
+}
+
+@keyframes appear-item {
+    to {
+        opacity: 1;
+    }
 }
 
 .task-list .task-list__task .task-text {
