@@ -4,15 +4,20 @@ footer {
     right: 20px;
 }
 
-footer > small > span {
+footer small span {
     color: var(--red);
+    transition: font-size .4s;
 }
 
-footer > small > a {
+footer small:hover span {
+    font-size: 20px;
+}
+
+footer small a {
     text-decoration: none;
     color: rgb(13, 83, 189);
 }
 
-footer > small > a:hover {
+footer small a:hover {
     text-decoration: underline;
 }
