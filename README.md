@@ -16,7 +16,7 @@ Clone this repository by entering in your command line the folowing text:
 
 `git clone https://github.com/SnovRuslan/react-todo-app.git`
 
-After cloning this project, you have to install __all__ dependecies to launch it (You must have [Node.js and npm](https://https://nodejs.org/en/download/) on your computer).
+After cloning this project, you have to install __all__ dependecies to launch it (You must have [Node.js and npm](https://nodejs.org/en/download/) on your computer).
 ```bash
 npm install
 npm start
